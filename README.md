@@ -18,7 +18,8 @@ It allows the multi-player table top game to be played as solo.
 * Implement a variant chit-pull mechanism (i.e. chit = Captain Token) by generating a list of ships per gameplay phase
 
 ### How does it work?
-A <u>physical copy</u> of the <b>Star Trek Attack Wing Starter Set</b> is <u>required</u>; better if purchased expansion packs are available.<br>
+A <u>physical copy</u> of the <b>Star Trek Attack Wing Starter Set</b> is <u>required</u>; better if purchased expansion packs are available.
+
 A computer hosted on Linux, Mac OS or Windows with a copy of the <b>Python 3 interpreter</b> (https://www.python.org/) installed.
 
 The program is executed on the command-line | terminal using the command:<br>
