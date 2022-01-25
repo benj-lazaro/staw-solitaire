@@ -1,5 +1,5 @@
 ## STAW: Solitaire
-An implementation of a variant gameplay of <b>Star Trek Attack Wing (STAW)</b> <u>inspired from</u> <b>Leo Zappa's Simple Solitaire Rules version 2.0</b> released on Aug. 16, 2014.
+A variant gameplay implementation of <b>Star Trek Attack Wing (STAW)</b> <u>inspired from</u> <b>Leo Zappa's Simple Solitaire Rules version 2.0</b> released on August 16, 2014.
 
 Source Material: https://boardgamegeek.com/thread/1221629/leos-simple-solitaire-rules-playtest-and-developme
 
