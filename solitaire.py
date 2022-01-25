@@ -78,7 +78,7 @@ else:
     print("LCARS>> Ship names have been collected. Beggining solitaire gameplay.\n")
     print("*********************************************************************\n")
 
-# Solitaire gameplay
+# Start solitaire gameplay
 while (end_round != 1):
     activation_phase()
     any_key = input("LCARS>> Press ENTER to move into COMBAT PHASE\n\n")
@@ -100,5 +100,5 @@ while (end_round != 1):
     else:
         print("********************************************************\n")
 
-# Terminate program
+# End solitaire gameplay
 end_program()
