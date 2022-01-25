@@ -1,5 +1,6 @@
 ## STAW: Solitaire
-A variant gameplay implementation of <b>Star Trek Attack Wing (STAW)</b> <u>inspired from</u> <b>Leo Zappa's Simple Solitaire Rules version 2.0</b>.<br>
+A variant gameplay implementation of <b>Star Trek Attack Wing (STAW)</b> <u>inspired from</u> <b>Leo Zappa's Simple Solitaire Rules version 2.0</b>.
+
 Source Material: https://boardgamegeek.com/thread/1221629/leos-simple-solitaire-rules-playtest-and-developme
 
 ### What does it do?
