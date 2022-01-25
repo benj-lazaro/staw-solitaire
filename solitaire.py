@@ -96,6 +96,9 @@ while (end_round != 1):
 
     if (user_response == 'y'):
         print("\n")
-        end_program()
+        end_round = 1
     else:
         print("********************************************************\n")
+
+# Terminate program
+end_program()
