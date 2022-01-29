@@ -9,6 +9,7 @@ number_of_ships = 0
 # Global data structure
 ship_list = []
 
+
 # Get ship names from user
 def get_ship_names():
     print("LCARS>> Please provide the name of individual ships:\n")
@@ -19,10 +20,12 @@ def get_ship_names():
 
     print("\n")
 
+
 # Generate ship list
 def generate_ship_list():
     for ship in range(0, len(ship_list)):
         print(f"  Ship {ship + 1}: {ship_list[ship]}")
+
 
 # Activation Phase
 def activation_phase():
@@ -35,6 +38,7 @@ def activation_phase():
     generate_ship_list()
     print("\n")
 
+
 # Combat Phase
 def combat_phase():
     print(f"LCARS>> COMBAT PHASE Round # {current_round + 1}\n")
@@ -46,6 +50,7 @@ def combat_phase():
     generate_ship_list()
     print("\n")
 
+
 # End Phase
 def end_phase():
     # Display 'clean up' rules
@@ -55,6 +60,7 @@ def end_phase():
     print("        Retain all Target Lock Tokens.\n")
     print("        Green Cloak Tokens may be retained (player discretion).\n")
 
+
 # Terminate program
 def end_program():
     # Display message before terminating the program
@@ -62,13 +68,14 @@ def end_program():
     print("LCARS>> End program.\n")
     exit()
 
+
 # Display greeting
 print("\n--[ Star Trek Attack Wing: Solitaire ]--\n\n")
 
 # Game setup
 number_of_ships = int(input("LCARS>> How many ships will you be playing today: "))
 
-if (number_of_ships <= 1):
+if number_of_ships <= 1:
     print("\nLCARS>> Error! At least two (2) ships are required in order to play.\n")
     end_program()
 else:
@@ -79,7 +86,8 @@ else:
     print("*********************************************************************\n")
 
 # Start solitaire gameplay
-while (end_round != 1):
+any_key = ""
+while end_round != 1:
     activation_phase()
     any_key = input("LCARS>> Press ENTER to move into COMBAT PHASE\n\n")
 
@@ -94,7 +102,7 @@ while (end_round != 1):
     # Display option to continue game or terminate program
     user_response = str(input("LCARS>> Press [y] to end round (game) or press ENTER to continue: ")).lower()
 
-    if (user_response == 'y'):
+    if user_response == 'y':
         print("\n")
         end_round = 1
     else:
