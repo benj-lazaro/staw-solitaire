@@ -8,7 +8,11 @@ continue_play = True
 user_response = ""
 ship_list = []
 
-def  welcome_screen():
+def clear_terminal_screen():
+    print("\n" * 100)
+
+def welcome_screen():
+    clear_terminal_screen()
     print(start_logo)
     print("\n Welcome to Star Trek Attack Wing (STAW): Solitaire \n\n")
 
@@ -32,17 +36,14 @@ def game_setup():
     print("\n Commencing STAW: Solitaire in 3 seconds.. ")
     time.sleep(3)
 
-def clear_terminal_screen():
-    print("\n" * 100)
-
 def generate_ship_list(action):
     for ship in range(0, len(ship_list)):
-        print(f" Ship to {action} #{ship + 1}: {ship_list[ship]}")
+        print(f" Ship to {action} #{ship + 1}: {ship_list[ship]}\n")
 
 def activation_phase():
     clear_terminal_screen()
     print(f" Activation Phase Round # {game_round + 1}")
-    print(" ============================ ")
+    print(" =========================== ")
 
     random.shuffle(ship_list)
     generate_ship_list("move")
@@ -51,14 +52,14 @@ def activation_phase():
 def combat_phase():
     clear_terminal_screen()
     print(f" Combat Phase Round # {game_round + 1}")
-    print("\n ======================== ")
+    print(" ======================= ")
     random.shuffle(ship_list)
     generate_ship_list("attack")
 
 def end_phase():
     clear_terminal_screen()
     print(f" End Phase Round # {game_round + 1}")
-    print("\n ===================== ")
+    print(" ==================== ")
     print(''' 1.) Flip back disabled (not destroyed) Shield tokens to their active states.\n\n 2.) Remove all remaining BattleStation, Evade, Scan and Red Cloak tokens.\n\n 3.) Retain all Target Lock tokens.\n\n 4.) Green Cloak tokens may be retained (player discretion).
 
     ''')
@@ -67,8 +68,7 @@ def end_phase():
 def terminate_program():
     clear_terminal_screen()
     print(end_logo)
-    print(''' Thank you for playing Star Trek Attack Wing (STAW): Solitaire
-    ''')
+    print("\n Thank you for playing Star Trek Attack Wing (STAW): Solitaire \n\n")
 
 welcome_screen()
 game_setup()
