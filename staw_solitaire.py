@@ -1,112 +1,97 @@
-# Import module
 import random
+import time
+from art import start_logo, end_logo
 
-# Global variables
-current_round = 0
-end_round = 0
-number_of_ships = 0
-
-# Global data structure
+# Global variables & data structure
+game_round = 0
+continue_play = True
+user_response = ""
 ship_list = []
 
+def  welcome_screen():
+    print(start_logo)
+    print("\n Welcome to Star Trek Attack Wing (STAW): Solitaire \n\n")
 
-# Get ship names from user
-def get_ship_names():
-    print("LCARS>> Please provide the name of individual ships:\n")
+def game_setup():
+    ship_count = 0
 
-    for ship in range(0, number_of_ships):
-        ship_name = str(input(f"  Ship Name {ship + 1}: ")).lower()
-        ship_list.append(ship_name)
+    print(" Game Setup\n")
+    print(" ==========\n")
+    ship_count = int(input(" How many ships are you going to play: "))
 
-    print("\n")
+    if ship_count <= 1:
+        print("\n Sorry, the game requires at least two (2) ships to play.")
+    else:
+        print(f"\n Please enter individual names of the {ship_count} ships.")
 
+        for ship in range(0, ship_count):
+            ship_name = str(input(f" >> Ship Name {ship + 1}: "))
+            ship_list.append(ship_name)
 
-# Generate ship list
-def generate_ship_list():
+    print(f"\n Names of {ship_count} ships have been collected.")
+    print("\n Commencing STAW: Solitaire in 3 seconds.. ")
+    time.sleep(3)
+
+def clear_terminal_screen():
+    print("\n" * 100)
+
+def generate_ship_list(action):
     for ship in range(0, len(ship_list)):
-        print(f"  Ship {ship + 1}: {ship_list[ship]}")
+        print(f" Ship to {action} #{ship + 1}: {ship_list[ship]}")
 
-
-# Activation Phase
 def activation_phase():
-    print(f"LCARS>> ACTIVATION PHASE Round # {current_round + 1}\n")
+    clear_terminal_screen()
+    print(f" Activation Phase Round # {game_round + 1}")
+    print(" ============================ ")
 
-    # Mimic variant chit-pull mechanism; shuffle list items
     random.shuffle(ship_list)
+    generate_ship_list("move")
+    print("\n NOTE: Implement corresponding Action after moving each ship.")
 
-    # List the order of ship movement (i.e. who goes first)
-    generate_ship_list()
-    print("\n")
-
-
-# Combat Phase
 def combat_phase():
-    print(f"LCARS>> COMBAT PHASE Round # {current_round + 1}\n")
-
-    # Mimic variant chit-pull mechanism; shuffle list items
+    clear_terminal_screen()
+    print(f" Combat Phase Round # {game_round + 1}")
+    print("\n ======================== ")
     random.shuffle(ship_list)
+    generate_ship_list("attack")
 
-    # List the order of ship attack (i.e. who fires first)
-    generate_ship_list()
-    print("\n")
-
-
-# End Phase
 def end_phase():
-    # Display 'clean up' rules
-    print(f"LCARS>> END PHASE Round # {current_round + 1}\n")
-    print("LCARS>> Flip back disabled Shield Tokens to their active states.\n")
-    print("        Remove all remaining BatteStation, Evade, Scan & Red Cloak Tokens.\n")
-    print("        Retain all Target Lock Tokens.\n")
-    print("        Green Cloak Tokens may be retained (player discretion).\n")
+    clear_terminal_screen()
+    print(f" End Phase Round # {game_round + 1}")
+    print("\n ===================== ")
+    print(''' 1.) Flip back disabled (not destroyed) Shield tokens to their active states.\n\n 2.) Remove all remaining BattleStation, Evade, Scan and Red Cloak tokens.\n\n 3.) Retain all Target Lock tokens.\n\n 4.) Green Cloak tokens may be retained (player discretion).
 
+    ''')
 
 # Terminate program
-def end_program():
-    # Display message before terminating the program
-    print("LCARS>> Thank you for playing Star Trek Attack Wing: Solitaire.\n")
-    print("LCARS>> End program.\n")
-    exit()
+def terminate_program():
+    clear_terminal_screen()
+    print(end_logo)
+    print(''' Thank you for playing Star Trek Attack Wing (STAW): Solitaire
+    ''')
 
+welcome_screen()
+game_setup()
 
-# Display greeting
-print("\n--[ Star Trek Attack Wing: Solitaire ]--\n\n")
-
-# Game setup
-number_of_ships = int(input("LCARS>> How many ships will you be playing today: "))
-
-if number_of_ships <= 1:
-    print("\nLCARS>> Error! At least two (2) ships are required in order to play.\n")
-    end_program()
-else:
-    print(f"\nLCARS>> Noted. You will be playing a total of {number_of_ships} ships.\n")
-    print("*************************************************************************\n")
-    get_ship_names()
-    print("LCARS>> Ship names have been collected. Beggining solitaire gameplay.\n")
-    print("*********************************************************************\n")
-
-# Start solitaire gameplay
-any_key = ""
-while end_round != 1:
+while continue_play:
     activation_phase()
-    any_key = input("LCARS>> Press ENTER to move into COMBAT PHASE\n\n")
+    print("\n Moving to -= Combat Phase =-")
+    proceed_to_combat = input("\n Press [y] to proceed: ").lower()
 
-    combat_phase()
-    any_key = input("LCARS>> Press ENTER to move into END PHASE\n\n")
+    if proceed_to_combat == 'y':
+        combat_phase()
 
-    end_phase()
+    print("\n Moving to -= End Phase =-")
+    proceed_to_end = input("\n Press [y] to proceed: ").lower()
 
-    # Increment round counter by 1
-    current_round += 1
+    if proceed_to_end == 'y':
+        end_phase()
 
-    # Display option to continue game or terminate program
-    user_response = str(input("LCARS>> Press [y] to end round (game) or press ENTER to continue: ")).lower()
+    print("\n Commencing next round...")
+    next_round = input("\n Press [y] to proceed, any key to terminate: ").lower()
 
-    if user_response == 'y':
-        print("\n")
-        end_round = 1
+    if next_round == 'y':
+        game_round += 1
     else:
-        print("********************************************************\n")
-
-# End solitaire gameplay
-end_program()
+        continue_play = False
+        terminate_program()
