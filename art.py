@@ -1,3 +1,4 @@
+# ASCII Art c/o ASCII.co.uk (https://ascii.co.uk/art/startrek)
 end_logo = '''
                                  ___
                 _____.----------'---`----------._____
