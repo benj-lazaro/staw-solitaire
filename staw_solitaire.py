@@ -101,7 +101,7 @@ while not is_game_over:
         if next_phase == 'n':
             is_game_over = True
         else:
-            # End combat_phase
+            # End Phase
             end_phase(game_round)
             print("\n Proceeding to next game round...")
             next_phase = str(input(" Press 'y' to proceed, 'n' to terminate: "))
