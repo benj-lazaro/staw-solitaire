@@ -59,11 +59,9 @@ def end_screen():
 game_round = 0
 ships_to_play = 0
 is_game_over = False
-
 ship_list = []
 
 welcome_screen()
-
 ships_to_play = int(input(" How many ships to play: "))
 
 # Game Setup
