@@ -14,4 +14,3 @@ A solo variant gameplay implementationn of the multiplayer <b>Star Trek Attack W
 ## Version History
 * Version 01: Browser console app written in <b>JavaScript</b>.
 * Version 02 (current): CLI-based app written in <b>Python 3</b>.
-* Version 03 (ongoing): GUI app written in <b>Python 3</b> with <b>Tkinter</b>.
