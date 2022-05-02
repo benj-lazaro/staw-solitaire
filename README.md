@@ -8,7 +8,7 @@ A solo variant gameplay implementationn of the multiplayer <b>Star Trek Attack W
 
 ## Import Note
 * This is intended for <b>educational purposes ONLY</b>.
-* It is intended as a <b>fun project</b> for the continued exploration of <b>Python 3</b>, it's <b>standard library</b> & <b>3rd-party modules</b>.
+* It is intended as a <b>fun project</b> for the continued exploration of <b>Python 3</b>.
 * It is <b>NOT intended for profit</b>.
 
 ## Version History
