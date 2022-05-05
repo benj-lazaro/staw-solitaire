@@ -1,5 +1,5 @@
 # STAW: Solitaire
-A solo variant gameplay implementationn of the multiplayer tabletop game entitled <b>Star Trek Attack Wing</b> published by <b>Wizkids Games</b>.
+A <b>solo gameplay</b> implementationn of the multiplayer tabletop game entitled <b>Star Trek Attack Wing</b> published by <b>Wizkids Games</b>.
 
 ## What Does It Do
 * It automates the <b>solo gameplay mechanics</b> and presented as a CLI-based or console app.
