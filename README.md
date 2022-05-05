@@ -2,7 +2,7 @@
 A <b>solo gameplay</b> implementationn of the multiplayer tabletop game entitled <b>Star Trek Attack Wing</b> published by <b>Wizkids Games</b>.
 
 ## What Does It Do
-* It automates the <b>solo gameplay mechanics</b> and presented as a CLI-based app.
+* It automates some parts of the <b>solo gameplay mechanics</b>; presented as a CLI-based app.
 * It is inspired from <b>Leo Zappa's Simple Solitaire Rules version 2.0</b>, published on <b>August 16, 2014</b>.
 * Source material: (https://boardgamegeek.com/thread/1221629/leos-simple-solitaire-rules-playtest-and-developme)
 
