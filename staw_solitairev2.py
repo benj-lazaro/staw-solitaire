@@ -76,6 +76,7 @@ def end_phase(game_round):
 
 
 def declare_victor(ship_list):
+    """declare_victor(list) returns the name of the ship that won the game."""
     return f"\n{ship_list[0]} wins this game!!!\n"
 
 def game_setup():
