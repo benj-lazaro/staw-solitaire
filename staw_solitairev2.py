@@ -96,7 +96,7 @@ def game_setup():
 
 
 
-# Test Code
+# Gameplay
 welcome_screen()
 game_setup()
 
