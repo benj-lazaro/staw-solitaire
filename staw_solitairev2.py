@@ -10,7 +10,7 @@ def welcome_screen():
 
 
 def end_screen():
-    """end_screen() return a message."""
+    """end_screen() returns a thank you message."""
     print("Thank you for playing Star Trek Attack Wing: Solitaire")
 
 
