@@ -65,6 +65,7 @@ def attack_phase(list_data, game_round):
 
 
 def end_phase(game_round):
+    """end_phase(int) returns multi-line text on end / clean-up phase of the game."""
     print(f"\nEnd Phase Round {game_round}")
     print("----")
     print("1.) Flip back disabled Shield token(s) to their active sides for free.")
