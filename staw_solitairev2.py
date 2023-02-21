@@ -84,7 +84,7 @@ def game_setup():
     ships_to_play = int(input("How many ships you will play: "))
     ships_to_play_against = int(input("How many ships will you play against: "))
 
-    if ships_to_play <= 0 and ships_to_play_against <=0:
+    if ships_to_play <= 0 and ships_to_play_against <= 0:
         print("The game requires at least 2 ships to play.")
         return
     else:
