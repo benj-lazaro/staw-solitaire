@@ -64,6 +64,7 @@ def attack_phase(list_data, game_rnd):
                 ship_down = False
             else:
                 ship_destroyed(list_data, int(ship_index))
+                generate_ship_list(list_data, "attack")
 
 
 def end_phase(game_rnd):
